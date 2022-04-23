@@ -1,0 +1,59 @@
+package com.mycompany.getset;
+
+
+public class Getset {
+
+    public static void main(String[] args) {
+      
+        Modelo Mod = new Modelo();
+        Mod.entradaDados();
+        Mod.imprimir();
+        
+        
+    }
+}
+
+
+
+
+package com.mycompany.getset;
+
+import java.util.Scanner;
+
+public class Modelo {
+
+    double tamanho;
+    String nome;
+
+    public double getTamanho() {
+        return tamanho;
+    }
+
+    public void setTamanho(double tam) {
+        tamanho = tam;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nom) {
+        nome = nom;
+    }
+
+    public void entradaDados() {
+        Scanner entrada = new Scanner(System.in);
+        System.out.println("digite o tamanho");
+
+        setTamanho(Double.parseDouble(entrada.nextLine()));
+        System.out.println("digite o nome");
+        setNome(entrada.nextLine());
+    }
+
+    public void imprimir() {
+
+        System.out.println("tamanho " + tamanho + "cm");
+        System.out.println("nome " + nome);
+    }
+
+}
