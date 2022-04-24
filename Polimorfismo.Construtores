@@ -1,0 +1,132 @@
+package com.mycompany.geometria;
+
+public class Geometria {
+
+    public static void main(String[] args) {
+
+        Calc quadrado = new Calc();
+        quadrado.entradaquadrado();
+        quadrado.imprimirquadrado();
+
+        Calc retangulo = new Calc();
+        retangulo.entradaretangulo();
+        retangulo.imprimirretangulo();
+
+        Calc circulo = new Calc();
+        circulo.entradacirculo();
+        circulo.imprimircirculo();
+
+    }
+
+}
+
+
+
+
+
+package com.mycompany.geometria;
+
+import java.util.Scanner;
+
+public class Calc {
+
+    double lado, altura;
+    int raio;
+
+    public void setLado(double a) {
+        lado = a;
+    }
+
+    public double getLado() {
+        return lado;
+    }
+
+    public void setAltura(double a) {
+        altura = a;
+    }
+
+    public double getAltura() {
+        return altura;
+    }
+
+    public void setRaio(int r) {
+        raio = r;
+    }
+
+    public double getRaio() {
+        return raio;
+    }
+
+    public Calc() {
+    }
+
+    public Calc(double lado) {
+        setLado(lado);
+    }
+
+    public Calc(double lado, double altura) {
+        setLado(lado);
+        setAltura(altura);
+    }
+
+    public Calc(int raio) {
+        setRaio(raio);
+    }
+
+    public double quadrado() {
+        double quadrado;
+        quadrado = Math.pow(getLado(),2);
+        return quadrado;
+    }
+
+    public void entradaquadrado() {
+        Scanner quadrado = new Scanner(System.in);
+
+        System.out.println("digite o lado  do quadrado");
+        setLado(Double.parseDouble(quadrado.nextLine()));
+
+    }
+
+    public void imprimirquadrado() {
+        System.out.println("area " + quadrado());
+    }
+
+    public double retangulo() {
+        double retangulo;
+        retangulo = getLado() * getAltura();
+        return retangulo;
+    }
+
+    public void entradaretangulo() {
+        Scanner quadrado = new Scanner(System.in);
+
+        System.out.println("digite o lado  do retangulo");
+        setLado(Double.parseDouble(quadrado.nextLine()));
+        System.out.println("digite a altura  do retangulo");
+        setAltura(Double.parseDouble(quadrado.nextLine()));
+
+    }
+
+    public void imprimirretangulo() {
+        System.out.println("area " + retangulo());
+    }
+
+    public double circulo() {
+        double circulo;
+        circulo = Math.PI * Math.pow(getRaio(), 2);
+        return circulo;
+    }
+
+    public void entradacirculo() {
+        Scanner circulo = new Scanner(System.in);
+
+        System.out.println("digite o raio");
+        setRaio(Integer.parseInt(circulo.nextLine()));
+
+    }
+
+    public void imprimircirculo() {
+        System.out.println("area " + circulo());
+    }
+
+}
