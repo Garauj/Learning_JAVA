@@ -1,0 +1,75 @@
+
+package com.mycompany.heranca;
+import java.util.Scanner;
+
+public class Heranca {
+
+    public static void main(String[] args) {
+        
+        
+        subclass um = new subclass();
+        um.entradaDados();
+        um.imprimir();
+
+    }
+}
+
+
+
+
+package com.mycompany.heranca;
+import java.util.Scanner;
+        
+
+
+public class superclasse {
+    String nome;
+    public String getNome(){return nome;}
+    public void setNome(String NO) {
+    nome = NO;}
+    
+
+public void entradaDados() {
+Scanner entrada = new Scanner(System.in);
+    System.out.println("Nome :");
+setNome(entrada.nextLine());
+}
+  public void imprimir( ){  
+      System.out.println("Nome Um :" + getNome());
+}
+
+}
+
+
+
+
+package com.mycompany.heranca;
+
+import java.util.Scanner;
+
+
+public class subclass extends superclasse {
+    
+    
+    String nome2;
+    public String getNome2(){return nome2;}
+    public void setNome2(String NO) {
+    nome2 = NO;}
+    
+
+public void entradaDados() {
+    super.entradaDados();
+Scanner entrada = new Scanner(System.in);
+    System.out.println("Nome2 :");
+setNome2(entrada.nextLine());
+}
+  public void imprimir( ){  
+      super.imprimir();
+      System.out.println("Nome Dois :" + getNome2());
+}
+
+}
+    
+    
+
+
