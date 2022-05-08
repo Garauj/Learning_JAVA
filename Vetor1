@@ -1,0 +1,40 @@
+package com.mycompany.vetor;
+
+import java.util.Scanner;
+
+
+public class Vetor {
+
+    public static void main(String[] args) {
+        
+        Scanner ent = new Scanner(System.in);
+        
+        int qdt;
+        System.out.println("Número de Observações ");
+       qdt = Integer.parseInt(ent.nextLine());
+              
+ double temperatura[]= new double [qdt];
+ 
+ for (int i = 0; i < qdt; i++) {
+System.out.println("Digite a temperatura: [" + (i + 1) + "]");
+temperatura[i] = Double.parseDouble(ent.nextLine());
+        
+   
+ }
+for (int i = 0; i < qdt; i++) {
+ System.out.println("Foram entradas as temperaturas:");
+System.out.println("Temperatura: [" + (i + 1) + "] = " + temperatura[i]);    
+       
+    }
+double total = 0;
+int contador = 0;
+for (int i = 0; i < qdt; i++) {
+    total = total + temperatura[i];
+    contador = i;
+}
+double media = total / contador;
+System.out.println("Temperatura média :"+media);
+
+}
+}
+    
